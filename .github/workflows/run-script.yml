@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v4   # this gets your files from GitHub
 
       - name: Run PowerShell script
-        run: pwsh ./script.ps1      # this runs your script.ps1 file
+        run: pwsh ./testscript.ps1      # this runs your script.ps1 file

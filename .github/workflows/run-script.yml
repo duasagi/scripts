@@ -1,1 +1,14 @@
+name: Run PowerShell Script
 
+on:
+  workflow_dispatch:  # this means: you can run it manually
+
+jobs:
+  run:
+    runs-on: windows-latest  # tells GitHub to use a Windows computer in the cloud
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4   # this gets your files from GitHub
+
+      - name: Run PowerShell script
+        run: pwsh ./script.ps1      # this runs your script.ps1 file

@@ -21,7 +21,7 @@ $headers = @{
 
 # Example: ServiceNow Table API query for RITMs with 'approved' state
 # NOTE: Change the table and query according to your instance setup
-$apiUrl = "$ServiceNowUrl/api/now/table/sc_req_item?sysparm_query=state=approved^ORDERBYDESCsys_updated_on&sysparm_limit=5"
+$apiUrl = "$ServiceNowUrl/api/now/table/sc_req_item?sysparm_query=state=1&stage=request_approved^ORDERBYDESCsys_updated_on&sysparm_limit=5"
 
 try {
     $response = Invoke-RestMethod -Uri $apiUrl -Headers $headers -Method Get

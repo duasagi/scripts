@@ -2,7 +2,7 @@ name: Check Approved RITMs
 
 on:
   schedule:
-    - cron: "*/1 * * * *"   # runs every 15 minutes
+    - cron: "*/5 * * * *"   # runs every 15 minutes
   workflow_dispatch:          # you can also run it manually
 
 jobs:

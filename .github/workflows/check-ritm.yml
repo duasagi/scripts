@@ -1,0 +1,20 @@
+name: Check Approved RITMs
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"   # runs every 15 minutes
+  workflow_dispatch:          # you can also run it manually
+
+jobs:
+  check-ritm:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run PowerShell Script to Check Approved RITMs
+        run: pwsh ./check-approved-ritm.ps1 `
+          -ServiceNowUrl "${{ secrets.SN_URL }}" `
+          -Username "${{ secrets.SN_USERNAME }}" `
+          -Password "${{ secrets.SN_PASSWORD }}"
